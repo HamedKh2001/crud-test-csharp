@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  mc2.crudtest.customerservice.webapi:
+    image: ${DOCKER_REGISTRY-}mc2crudtestcustomerservicewebapi
+    build:
+      context: .
+      dockerfile: src\Services\CustomerService\Mc2.CrudTest.CustomerService.WebAPI\Dockerfile
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-CU3-ubuntu-20.04
+
+  eventstore:
+    image: eventstore/eventstore:release-5.0.8
